@@ -13,7 +13,7 @@ int Massiv(int a, int b)
 int result = 0;
     if (b < 3)
     {
-        Console.Write("Третьей цифры нет, реузультат");
+        Console.Write("Третьей цифры нет, результат");
     }
     else
     {
