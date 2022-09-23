@@ -21,10 +21,8 @@ int reverseDigits(int num)
 // Проверка на палиндром
 int isPalindrome(int n)
     {
-        // get the reverse of n
-        int rev_n = reverseDigits(n);
-        // Check if rev_n and n are same or not.
-        if (rev_n == n)
+               int rev_n = reverseDigits(n);
+               if (rev_n == n)
             return 1;
         else
             return 0;
