@@ -18,23 +18,30 @@ Console.WriteLine("введите кол-во строк матрицы");
 int n = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("введите кол-во столбцов матрицы");
 int m = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("введите индекс элемента, который хотите найти: ");
+Console.WriteLine("введите порядковый номер элемента, который хотите найти: ");
 int findnumber = Convert.ToInt32(Console.ReadLine());
-if (findnumber > n*m){
+if (findnumber > n*m - 1){
 Console.WriteLine("-> такого элемента нет");
 }
-int [,] numbers = new int [n,m];
-int i1;
-int j1;
-FillArrayRandomNumbers(numbers);
-PrintArray(numbers);
-j1 = findnumber % m - 1;
-if (j1 != m){ 
-   i1 = (findnumber % m);
+else
+{
+    int[,] numbers = new int[n, m];
+    int i1 = 0;
+    int j1 = 0;
+    FillArrayRandomNumbers(numbers);
+    PrintArray(numbers);
+    i1 = findnumber / m;
+    if (i1 != n)
+    {
+        j1 = findnumber % m;
+        Console.WriteLine($"Элемент который вы ищите: {numbers[i1, j1]}");
+    }
+    else
+    {
+        Console.WriteLine("-> такого элемента нет");
+    }
 }
-else {i1 = findnumber % m - 1;
-}
-Console.WriteLine(numbers[i1,j1]);
+
 
 void FillArrayRandomNumbers(int[,] array)
 {

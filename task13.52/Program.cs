@@ -11,22 +11,11 @@ int n = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("введите кол-во столбцов матрицы");
 int m = Convert.ToInt32(Console.ReadLine());
 int [,] numbers = new int [n,m];
-int i1 = Convert.ToInt32(Console.ReadLine());
-int j1 = Convert.ToInt32(Console.ReadLine());
+
 FillArrayRandomNumbers(numbers);
 PrintArray(numbers);
-Console.WriteLine(array.GetLength(0));
-for (int j = 0; j < array.GetLength(1); j++)
-{
-    double sum = 0;
-    for (int i = 0; i < array.GetLength(0); i++)
-    {
-        sum += array[i, j];
-    }
-    Console.Write($"{ sum / array.GetLength(0)} ");
-}
-Console.ReadLine();
-
+Console.Write("Среднеарифметическое в каждом столбце: ");
+Srednearifm(numbers);
 
 void FillArrayRandomNumbers(int[,] array)
 {
@@ -38,6 +27,20 @@ void FillArrayRandomNumbers(int[,] array)
             }   
         }
 
+}
+
+void Srednearifm(int[,] array)
+{
+        for (int j = 0; j < array.GetLength(1); j++)
+    {
+        decimal sum = 0;
+        for (int i = 0; i < array.GetLength(0); i++)
+        {
+            sum += array[i, j];
+        }
+    decimal d = Math.Round(sum / array.GetLength(0),2);
+    Console.Write($" {d} ;");
+    }
 }
 
 void PrintArray(int[,] array)
