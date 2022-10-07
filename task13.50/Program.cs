@@ -24,18 +24,17 @@ if (findnumber > n*m){
 Console.WriteLine("-> такого элемента нет");
 }
 int [,] numbers = new int [n,m];
-int i1 = Convert.ToInt32(Console.ReadLine());
-int j1 = Convert.ToInt32(Console.ReadLine());
+int i1;
+int j1;
 FillArrayRandomNumbers(numbers);
 PrintArray(numbers);
-j1 = findnumber % m;
+j1 = findnumber % m - 1;
 if (j1 != m){ 
-   i1 = (findnumber % m) + 1;
+   i1 = (findnumber % m);
 }
-else {i1 = findnumber % m;
+else {i1 = findnumber % m - 1;
 }
 Console.WriteLine(numbers[i1,j1]);
-
 
 void FillArrayRandomNumbers(int[,] array)
 {
